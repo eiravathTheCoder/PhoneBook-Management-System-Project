@@ -11,7 +11,7 @@ private:
   long long int phoneNumber;
 
 public:
-  /*This function is used to collect user information. */
+  /*This Function Is Used To Collect User Information For Creating A Contact */
   void createContact() {
     cout << "Enter First Name " << endl;
     cin >> firstName;
@@ -45,10 +45,11 @@ public:
     cout << "City: " << city << endl << "Country: " << country << endl;
   }
 
+  /*This Function Writes Information In The File. */
   void writeOnFile() {
     char ch;
     ofstream f1;
-    f1.open("CMS.dat", ios::binary | ios::app);
+    f1.open("CMS_DB.dat", ios::binary | ios::app);
 
     do {
       createContact();
@@ -61,9 +62,11 @@ public:
     f1.close();
   }
 
+  /*This Function Reads Data From File*/
+
   void readFromFile() {
     ifstream f2;
-    f2.open("CMS.dat", ios::binary);
+    f2.open("CMS_DB.dat", ios::binary);
 
     cout << "\n================================\n";
     cout << "LIST OF CONTACTS";
@@ -78,12 +81,14 @@ public:
     f2.close();
   }
 
+  /*This Function Searches For Existing Contacts*/
+
   void searchOnFile() {
     ifstream f3;
     long long int phone;
     cout << "Enter phone no.: ";
     cin >> phone;
-    f3.open("CMS.dat", ios::binary);
+    f3.open("CMS_DB.dat", ios::binary);
 
     while (!f3.eof()) {
       if (f3.read(reinterpret_cast<char *>(this), sizeof(*this))) {
@@ -97,13 +102,15 @@ public:
     f3.close();
   }
 
+  /*This Function Deletes The Contacts*/
+
   void deleteFromFile() {
     long long int num;
     int flag = 0;
     ofstream f4;
     ifstream f5;
 
-    f5.open("CMS.dat", ios::binary);
+    f5.open("CMS_DB.dat", ios::binary);
     f4.open("temp.dat", ios::binary);
 
     cout << "Enter phone no. to delete: ";
@@ -119,8 +126,8 @@ public:
     }
     f5.close();
     f4.close();
-    remove("CMS.dat");
-    rename("temp.dat", "CMS.dat");
+    remove("CMS_DB.dat");
+    rename("temp.dat", "CMS_DB.dat");
 
     flag == 1 ? cout << endl
                      << endl
@@ -130,6 +137,7 @@ public:
                      << "\tContact Not Found...";
   }
 
+  /*This Function Edits Existing Contacts*/
   void editContact() {
     long long int num;
     fstream f6;
@@ -139,7 +147,7 @@ public:
     cout << "Enter the phone number to be edit: ";
     cin >> num;
 
-    f6.open("CMS.dat", ios::binary | ios::out | ios::in);
+    f6.open("CMS_DB.dat", ios::binary | ios::out | ios::in);
 
     while (!f6.eof()) {
       if (f6.read(reinterpret_cast<char *>(this), sizeof(*this))) {
@@ -158,6 +166,8 @@ public:
     f6.close();
   }
 };
+
+/*Main Function- Code Execution Starts From Here*/
 
 int main() {
   system("cls");
@@ -214,7 +224,7 @@ int main() {
 
     case 0:
       system("cls");
-      cout << "\n\n\n\t\t\tThank you for using CMS." << endl << endl;
+      cout << "\n\n\n\t\t\tThank you for using PMS." << endl << endl;
       exit(0);
       break;
 

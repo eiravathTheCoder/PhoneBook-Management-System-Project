@@ -1,12 +1,12 @@
 # PhoneBook-Management-System-Project
 Phone Book Management System Built Using C++
 
-Features :- 
+<h4>Features :-</h4> 
 
-Create Contact
-List All Contacts
-Search A Contact
-Delete A Contact
-Edit A Contact
+*Create Contact
+*List All Contacts
+*Search A Contact
+*Delete A Contact
+*Edit A Contact
 
 

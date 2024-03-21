@@ -229,7 +229,7 @@ int main() {
     switch (opt) {
     case 0:
       system("cls");
-      cout << "\n\n\n\t\t\tThank you for using CMS." << endl << endl;
+      cout << "\n\n\n\t\t\tThank you for using PMS." << endl << endl;
       exit(0);
       break;
 
@@ -240,3 +240,10 @@ int main() {
 
   return 0;
 }
+
+/*  A Product Built Under `Make In India` Initiative. G20 Summit 2023.
+
+*
+* Code By :- Sagnik Chakraborty
+*
+*/

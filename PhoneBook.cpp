@@ -241,9 +241,4 @@ int main() {
   return 0;
 }
 
-/*  A Product Built Under `Make In India` Initiative. G20 Summit 2023.
-
-*
-* Code By :- Sagnik Chakraborty
-*
-*/
+/*  A Product Built Under `Make In India` Initiative. G20 Summit 2023. */
